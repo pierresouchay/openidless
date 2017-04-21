@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.openidless</groupId>
+  <artifactId>parent</artifactId>
+  <version>${openidless.version}</version>
+  <packaging>pom</packaging>
+  <name>Parent pom for OpenIDless Project</name>
+  <description>Provides access to UMS using UWS (UMS Web Services) using Java</description>
+  <url>https://github.com/pierresouchay/openidless</url>
+  <properties>
+    <!-- Main version -->
+    <openidless.version>0.1</openidless.version>
+    <!-- Maven and build-->
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- Dependencies -->
+    <dropwizard.version>1.0.7</dropwizard.version> 
+    <guava.version>20</guava.version>
+    <mockito.version>1.10.19</mockito.version>
+    <junit.version>4.12</junit.version>
+    <findbugs.version>3.0.2</findbugs.version>
+  </properties>
+  <modules>
+    <module>sources/apis</module>
+  </modules>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.dropwizard</groupId>
+        <artifactId>dropwizard-core</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>com.criteo.auth.oauth</groupId>
+        <artifactId>dropwizard-security</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>io.dropwizard</groupId>
+        <artifactId>dropwizard-assets</artifactId>
+        <version>${dropwizard.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${guava.version}</version>
+        <scope>compile</scope>
+      </dependency>
+
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+      <version>${findbugs.version}</version>
+    </dependency>
+    <!-- Tests -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <version>${mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <issueManagement>
+    <url>https://github.com/pierresouchay/openidless/issues</url>
+  </issueManagement>
+  <scm>
+    <url>git@github.com:pierresouchay/openidless.git</url>
+  </scm>
+  <inceptionYear>2017</inceptionYear>
+</project>
